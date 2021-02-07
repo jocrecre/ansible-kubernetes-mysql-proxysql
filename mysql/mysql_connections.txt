@@ -1,0 +1,13 @@
+# MySQL Master
+mysql -uroot -pmysqlrootpassword -h10.0.2.5 -P30036 --prompt "mysql-master> "
+
+# MySQL Slave
+mysql -uroot -pmysqlrootpassword -h10.0.2.5 -P30037 --prompt "mysql-slave> "
+
+# ProxySQL Admin (both nodes, do not use)
+mysql -uradmin -pradmin -h10.0.2.5 -P30032 --prompt "ProxySQL Admin> "
+
+# ProxySQL User (both nodes, do not use)
+mysql -uperico -pperico -h10.0.2.5 -P30033
+
+

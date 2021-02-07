@@ -1,0 +1,58 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: psql-config
+data:
+  proxysql.cnf: "admin_variables =\r\n{\r\n\tadmin_credentials=\"admin:admin;radmin:radmin\"\r\n\tchecksum_mysql_query_rules=\"true\"\r\n\tchecksum_mysql_servers=\"true\"\r\n\tchecksum_mysql_users=\"true\"\r\n\tcluster_check_interval_ms=\"1000\"\r\n\tcluster_check_status_frequency=\"10\"\r\n\tcluster_mysql_query_rules_diffs_before_sync=\"3\"\r\n\tcluster_mysql_query_rules_save_to_disk=\"true\"\r\n\tcluster_mysql_servers_diffs_before_sync=\"3\"\r\n\tcluster_mysql_servers_save_to_disk=\"true\"\r\n\tcluster_mysql_users_diffs_before_sync=\"3\"\r\n\tcluster_mysql_users_save_to_disk=\"true\"\r\n\tcluster_proxysql_servers_diffs_before_sync=\"3\"\r\n\tcluster_proxysql_servers_save_to_disk=\"true\"\r\n\thash_passwords=\"true\"\r\n\tmysql_ifaces=\"0.0.0.0:6032\"\r\n\tread_only=\"false\"\r\n\trefresh_interval=\"2000\"\r\n\trestapi_enabled=\"false\"\r\n\trestapi_port=\"6070\"\r\n\tstats_credentials=\"stats:stats\"\r\n\tstats_mysql_connection_pool=\"60\"\r\n\tstats_mysql_connections=\"60\"\r\n\tstats_mysql_query_cache=\"60\"\r\n\tstats_mysql_query_digest_to_disk=\"0\"\r\n\tstats_system_cpu=\"60\"\r\n\tstats_system_memory=\"60\"\r\n\ttelnet_admin_ifaces=\"(null)\"\r\n\ttelnet_stats_ifaces=\"(null)\"\r\n\tvacuum_stats=\"true\"\r\n\tversion=\"2.0.15-20-g32bb92cd\"\r\n\tweb_enabled=\"false\"\r\n\tweb_port=\"6080\"\r\n}\r\n\r\nmysql_variables
+    = \r\n{\r\n\tauditlog_filesize=\"104857600\"\r\n\taurora_max_lag_ms_only_read_from_replicas=\"2\"\r\n\tauto_increment_delay_multiplex=\"5\"\r\n\tautocommit_false_is_transaction=\"false\"\r\n\tautocommit_false_not_reusable=\"false\"\r\n\tautomatic_detect_sqli=\"0\"\r\n\tbinlog_reader_connect_retry_msec=\"3000\"\r\n\tclient_found_rows=\"true\"\r\n\tclient_multi_statements=\"true\"\r\n\tclient_session_track_gtid=\"true\"\r\n\tcommands_stats=\"true\"\r\n\tconnect_retries_delay=\"1\"\r\n\tconnect_retries_on_failure=\"10\"\r\n\tconnect_timeout_client=\"10000\"\r\n\tconnect_timeout_server=\"3000\"\r\n\tconnect_timeout_server_max=\"10000\"\r\n\tconnection_delay_multiplex_ms=\"0\"\r\n\tconnection_max_age_ms=\"0\"\r\n\tconnection_warming=\"false\"\r\n\tconnpoll_reset_queue_length=\"50\"\r\n\tdefault_charset=\"utf8\"\r\n\tdefault_collation_connection=\"utf8_general_ci\"\r\n\tdefault_max_latency_ms=\"1000\"\r\n\tdefault_query_delay=\"0\"\r\n\tdefault_query_timeout=\"36000000\"\r\n\tdefault_reconnect=\"true\"\r\n\tdefault_schema=\"information_schema\"\r\n\tdefault_session_track_gtids=\"OFF\"\r\n\tdefault_tx_isolation=\"READ-COMMITTED\"\r\n\tenforce_autocommit_on_reads=\"false\"\r\n\teventslog_default_log=\"0\"\r\n\teventslog_filesize=\"104857600\"\r\n\teventslog_format=\"1\"\r\n\tfirewall_whitelist_enabled=\"0\"\r\n\tfirewall_whitelist_errormsg=\"Firewall
+    blocked this query\"\r\n\tforward_autocommit=\"false\"\r\n\tfree_connections_pct=\"10\"\r\n\thandle_unknown_charset=\"1\"\r\n\thave_compress=\"true\"\r\n\thave_ssl=\"false\"\r\n\thostgroup_manager_verbose=\"1\"\r\n\tinterfaces=\"0.0.0.0:6033\"\r\n\tkeep_multiplexing_variables=\"tx_isolation,version\"\r\n\tkill_backend_connection_when_disconnect=\"true\"\r\n\tlog_unhealthy_connections=\"true\"\r\n\tlong_query_time=\"1000\"\r\n\tmax_allowed_packet=\"67108864\"\r\n\tmax_connections=\"2048\"\r\n\tmax_stmts_cache=\"10000\"\r\n\tmax_stmts_per_connection=\"20\"\r\n\tmax_transaction_idle_time=\"14400000\"\r\n\tmax_transaction_time=\"14400000\"\r\n\tmin_num_servers_lantency_awareness=\"1000\"\r\n\tmirror_max_concurrency=\"16\"\r\n\tmirror_max_queue_length=\"32000\"\r\n\tmonitor_connect_interval=\"60000\"\r\n\tmonitor_connect_timeout=\"600\"\r\n\tmonitor_enabled=\"true\"\r\n\tmonitor_galera_healthcheck_interval=\"5000\"\r\n\tmonitor_galera_healthcheck_max_timeout_count=\"3\"\r\n\tmonitor_galera_healthcheck_timeout=\"800\"\r\n\tmonitor_groupreplication_healthcheck_interval=\"5000\"\r\n\tmonitor_groupreplication_healthcheck_max_timeout_count=\"3\"\r\n\tmonitor_groupreplication_healthcheck_timeout=\"800\"\r\n\tmonitor_groupreplication_max_transactions_behind_count=\"3\"\r\n\tmonitor_history=\"600000\"\r\n\tmonitor_ping_interval=\"10000\"\r\n\tmonitor_ping_max_failures=\"3\"\r\n\tmonitor_ping_timeout=\"1000\"\r\n\tmonitor_query_interval=\"60000\"\r\n\tmonitor_query_timeout=\"100\"\r\n\tmonitor_read_only_interval=\"1500\"\r\n\tmonitor_read_only_max_timeout_count=\"3\"\r\n\tmonitor_read_only_timeout=\"500\"\r\n\tmonitor_replication_lag_count=\"1\"\r\n\tmonitor_replication_lag_interval=\"10000\"\r\n\tmonitor_replication_lag_timeout=\"1000\"\r\n\tmonitor_slave_lag_when_null=\"60\"\r\n\tmonitor_threads_max=\"128\"\r\n\tmonitor_threads_min=\"8\"\r\n\tmonitor_threads_queue_maxsize=\"128\"\r\n\tmonitor_username=\"perico\"\r\n\tmonitor_password=\"perico\"\r\n\tmonitor_wait_timeout=\"true\"\r\n\tmonitor_writer_is_also_reader=\"true\"\r\n\tmultiplexing=\"true\"\r\n\tping_interval_server_msec=\"120000\"\r\n\tping_timeout_server=\"500\"\r\n\tpoll_timeout=\"2000\"\r\n\tpoll_timeout_on_failure=\"100\"\r\n\tquery_cache_size_MB=\"256\"\r\n\tquery_cache_stores_empty_result=\"true\"\r\n\tquery_digests=\"true\"\r\n\tquery_digests_lowercase=\"false\"\r\n\tquery_digests_max_digest_length=\"2048\"\r\n\tquery_digests_max_query_length=\"65000\"\r\n\tquery_digests_no_digits=\"false\"\r\n\tquery_digests_normalize_digest_text=\"false\"\r\n\tquery_digests_replace_null=\"false\"\r\n\tquery_digests_track_hostname=\"false\"\r\n\tquery_processor_iterations=\"0\"\r\n\tquery_processor_regex=\"1\"\r\n\tquery_retries_on_failure=\"1\"\r\n\treset_connection_algorithm=\"2\"\r\n\tserver_capabilities=\"569899\"\r\n\tserver_version=\"5.5.30\"\r\n\tservers_stats=\"true\"\r\n\tsession_idle_ms=\"1000\"\r\n\tsession_idle_show_processlist=\"true\"\r\n\tsessions_sort=\"true\"\r\n\tset_query_lock_on_hostgroup=\"1\"\r\n\tshow_processlist_extended=\"0\"\r\n\tshun_on_failures=\"5\"\r\n\tshun_recovery_time_sec=\"10\"\r\n\tstacksize=\"1048576\"\r\n\tstats_time_backend_query=\"false\"\r\n\tstats_time_query_processor=\"false\"\r\n\ttcp_keepalive_time=\"0\"\r\n\tthreads=\"4\"\r\n\tthreshold_query_length=\"524288\"\r\n\tthreshold_resultset_size=\"4194304\"\r\n\tthrottle_connections_per_sec_to_hostgroup=\"1000000\"\r\n\tthrottle_max_bytes_per_second_to_client=\"0\"\r\n\tthrottle_ratio_server_to_client=\"0\"\r\n\tuse_tcp_keepalive=\"0\"\r\n\tverbose_query_error=\"false\"\r\n\twait_timeout=\"28800000\"\r\n}\r\nmysql_users:\r\n(\r\n\t{\r\n\t\tusername=\"perico\"\r\n\t\tpassword=\"perico\"\r\n\t\tactive=1\r\n\t\tuse_ssl=0\r\n\t\tdefault_hostgroup=0\r\n\t\tschema_locked=0\r\n\t\ttransaction_persistent=1\r\n\t\tfast_forward=0\r\n\t\tbackend=1\r\n\t\tfrontend=1\r\n\t\tmax_connections=10000\r\n\t}\r\n)\r\nmysql_query_rules:\r\n(\r\n\t{\r\n\t\trule_id=1\r\n\t\tactive=1\r\n\t\tflagIN=0\r\n\t\tmatch_digest=\"^SELECT.*\"\r\n\t\tnegate_match_pattern=0\r\n\t\tre_modifiers=\"CASELESS\"\r\n\t\tdestination_hostgroup=1\r\n\t\tapply=0\r\n\t},\r\n\t{\r\n\t\trule_id=6\r\n\t\tactive=1\r\n\t\tflagIN=0\r\n\t\tmatch_digest=\"^UPDATE.*\"\r\n\t\tnegate_match_pattern=0\r\n\t\tre_modifiers=\"CASELESS\"\r\n\t\tdestination_hostgroup=0\r\n\t\tapply=1\r\n\t}\r\n)\r\nmysql_servers:\r\n(\r\n\t{\r\n\t\thostgroup_id=0\r\n\t\thostname=\"10.0.2.5\"\r\n\t\tport=30036\r\n\t\tgtid_port=0\r\n\t\tstatus=\"ONLINE\"\r\n\t\tweight=200\r\n\t\tcompression=0\r\n\t\tmax_connections=1000\r\n\t\tmax_replication_lag=0\r\n\t\tuse_ssl=0\r\n\t\tmax_latency_ms=0\r\n\t},\r\n\t{\r\n\t\thostgroup_id=1\r\n\t\thostname=\"10.0.2.5\"\r\n\t\tport=30037\r\n\t\tgtid_port=0\r\n\t\tstatus=\"ONLINE\"\r\n\t\tweight=1000\r\n\t\tcompression=0\r\n\t\tmax_connections=1000\r\n\t\tmax_replication_lag=0\r\n\t\tuse_ssl=0\r\n\t\tmax_latency_ms=0\r\n\t}\r\n)\r\n"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-proxysql-service
+  labels:
+    app: proxysql
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: proxysql
+  template:
+    metadata:
+      labels:
+        app: proxysql
+    spec:
+      containers:
+      - name: proxysql
+        image: proxysql/proxysql
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/proxysql.cnf
+          subPath: proxysql.cnf
+      volumes:
+        - name: config-volume
+          configMap:
+            name: psql-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-proxysql-service
+spec:
+  type: NodePort
+  selector:
+    app: proxysql
+  ports:
+    - protocol: TCP
+      name: control
+      port: 6032
+      targetPort: 6032
+      nodePort: 30032
+    - protocol: TCP
+      name: data
+      port: 6033
+      targetPort: 6033
+      nodePort: 30033

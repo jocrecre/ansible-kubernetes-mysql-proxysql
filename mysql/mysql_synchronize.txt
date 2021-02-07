@@ -1,0 +1,33 @@
+Elimino proxysql service por si las moscas
+
+SHELL> kubectl delete -f proxysql-service.yaml
+
+MASTER																						
+----------------------------------------------------------------------------------------------------------
+	SHELL> mysql -uroot -pmysqlrootpassword -h10.0.2.5 -P30036 --prompt "mysql-master> "
+	mysql-master> RESET MASTER;
+	mysql-master> FLUSH TABLES WITH READ LOCK;
+	mysql-master> SHOW MASTER STATUS\G;
+	# File: mysql-bin.000001
+	# Position: 154
+	# no cierro consola, abro una sesión nueva para lo siguiente
+		SHELL> mysqldump -uroot -pmysqlrootpassword -h10.0.2.5 -P30036 --all-databases > /tmp/mysqldump.sql
+	# vuelvo a la sesión de mysql anterior
+	mysql-master> UNLOCK TABLES; 
+				
+SLAVE				
+----------------------------------------------------------------------------------------------------------
+	SHELL> mysql -uroot -pmysqlrootpassword -h10.0.2.5 -P30037 --prompt "mysql-slave> "
+	mysql-slave> STOP SLAVE;
+		SHELL> mysql -uroot -pmysqlrootpassword -h10.0.2.5 -P30037 < mysqldump.sql
+	mysql-slave> RESET SLAVE;
+	mysql-slave> CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=154;
+	mysql-slave> START SLAVE;
+	mysql-slave> SHOW SLAVE STATUS\G;
+	# Slave_IO_Running: Yes
+	# Slave_SQL_Running: Yes
+																							
+																							
+Creo proxysql service
+
+SHELL> kubectl apply -f proxysql-service.yaml

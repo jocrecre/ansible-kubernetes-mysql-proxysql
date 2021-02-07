@@ -1,0 +1,18 @@
+---
+- hosts: "masters,workers"
+  remote_user: ansible_user
+  become: yes
+  become_method: sudo
+  become_user: root
+  gather_facts: yes
+  connection: ssh
+  
+  tasks:
+  
+   - name: Disable unatttended upgrades
+     become_user: root
+     become_method: sudo
+     become: yes
+     copy:
+       src: files/10periodic
+       dest: /etc/apt/apt.conf.d/10periodic
