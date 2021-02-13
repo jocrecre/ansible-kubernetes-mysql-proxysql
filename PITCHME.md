@@ -1,6 +1,7 @@
 # El viaje de Q
 
-Durante el trayecto les avisaremos de las estaciones con parada
+
+![Itinerario](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F346425396329389452%2F&psig=AOvVaw2pL3bCW2DbZI06wJvHh_Pk&ust=1613306018466000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCt9rLv5u4CFQAAAAAdAAAAABAI)
 
 #HSLIDE
 
