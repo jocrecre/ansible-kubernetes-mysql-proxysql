@@ -1,6 +1,6 @@
-# Flux
+# El viaje de Q
 
-An application architecture for React
+Durante el trayecto les avisaremos de las estaciones con parada
 
 #HSLIDE
 
@@ -12,4 +12,4 @@ An application architecture for React
 
 #HSLIDE
 
-![Flux Explained](https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
+![Itinerario](https://raw.githubusercontent.com/jocrecre/ansible-kubernetes-mysql-proxysql/master/doc/k8lab.png)
